@@ -1,0 +1,14 @@
+User-agent: *
+
+Disallow: /auth/forgot-password
+Disallow: /auth/reset-password
+Disallow: /cart
+Disallow: /admin
+Disallow: /checkout
+Disallow: /js
+Disallow: /css
+Disallow: /images
+
+Allow: /sitemap.xml
+
+Sitemap: https://anpha.shop/sitemap.xml

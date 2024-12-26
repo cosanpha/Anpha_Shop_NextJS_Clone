@@ -60,24 +60,6 @@ export default async function RootLayout({
         className="text-dark"
         suppressHydrationWarning={true}
       >
-        {/* Google Analytics Script */}
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-XHR0P5M0ZT`}
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
-          {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-XHR0P5M0ZT');
-            `}
-        </Script>
-
         <StoreProvider session={session}>
           {/* Background */}
           <Background />

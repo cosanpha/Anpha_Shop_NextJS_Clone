@@ -13,7 +13,7 @@ export default async function RootLayout({
       {/* Header */}
       <Header />
 
-      {/* <FloatingButtons /> */}
+      <FloatingButtons />
       <ContactFloating />
 
       {/* Main */}

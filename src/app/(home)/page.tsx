@@ -117,7 +117,7 @@ async function HomePage() {
 
       {/* MARK: Choose Me */}
       <Heading title="Tại sao chọn tôi" />
-      <ChooseMe />
+      {/* <ChooseMe /> */}
     </div>
   )
 }

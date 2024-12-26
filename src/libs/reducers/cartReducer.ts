@@ -16,7 +16,7 @@ export const cart = createSlice({
     selectedItems: [] as ICartItem[],
   },
   reducers: {
-    // MARK: GLOCAL CART
+    // MARK: GLOBAL CART
     setCartItems: (state, action: PayloadAction<ICartItem[]>) => {
       return {
         ...state,

@@ -1,10 +1,10 @@
 import { connectDatabase } from '@/config/database'
 import CategoryModel from '@/models/CategoryModel'
+import { deleteFile } from '@/utils/uploadFile'
 import { NextRequest, NextResponse } from 'next/server'
 
 // Models: Category
 import '@/models/CategoryModel'
-import { deleteFile } from '@/utils/uploadFile'
 
 // [DELETE]: /admin/category/delete
 export async function DELETE(req: NextRequest) {

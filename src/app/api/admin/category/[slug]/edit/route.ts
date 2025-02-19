@@ -1,11 +1,11 @@
 import { connectDatabase } from '@/config/database'
 import CategoryModel, { ICategory } from '@/models/CategoryModel'
 import { NextRequest, NextResponse } from 'next/server'
+import { deleteFile, uploadFile } from '@/utils/uploadFile'
+import { generateSlug } from '@/utils'
 
 // Models: Category
 import '@/models/CategoryModel'
-import { deleteFile, uploadFile } from '@/utils/uploadFile'
-import { generateSlug } from '@/utils'
 
 // [PUT]: /admin/category/:slug/edit
 export async function PUT(req: NextRequest, { params: { slug } }: { params: { slug: string } }) {

@@ -62,7 +62,7 @@ function AllSummariesPage({ searchParams }: { searchParams?: { [key: string]: st
     setLoadingSummaries(ids)
 
     try {
-      // senred request to server
+      // send request to server
       const { message } = await sendSummaryApi(ids)
 
       // show success message

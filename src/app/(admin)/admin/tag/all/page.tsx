@@ -111,7 +111,7 @@ function AllTagsPage({ searchParams }: { searchParams?: { [key: string]: string[
     setLoadingTags(ids)
 
     try {
-      // senred request to server
+      // send request to server
       const { deletedTags, message } = await deleteTagsApi(ids)
 
       // remove deleted tags from state
@@ -131,7 +131,7 @@ function AllTagsPage({ searchParams }: { searchParams?: { [key: string]: string[
   // feature tag
   const handleFeatureTags = useCallback(async (ids: string[], value: boolean) => {
     try {
-      // senred request to server
+      // send request to server
       const { updatedTags, message } = await featureTagsApi(ids, value)
 
       // update tags from state
@@ -154,7 +154,7 @@ function AllTagsPage({ searchParams }: { searchParams?: { [key: string]: string[
     setLoadingTags(editingValues.map(t => t._id))
 
     try {
-      // senred request to server
+      // send request to server
       const { editedTags, message } = await updateTagsApi(editingValues)
 
       // update tags from state
@@ -177,7 +177,7 @@ function AllTagsPage({ searchParams }: { searchParams?: { [key: string]: string[
     }
   }, [])
 
-  // handle opimize filter
+  // handle optimize filter
   const handleOptimizeFilter: SubmitHandler<FieldValues> = useCallback(
     data => {
       // reset page
@@ -272,7 +272,7 @@ function AllTagsPage({ searchParams }: { searchParams?: { [key: string]: string[
         <div className="col-span-12 flex flex-col md:col-span-4">
           <label htmlFor="productQuantity">
             <span className="font-bold">Product Quantity: </span>
-            <span>{productQuantity}</span> - <span>{maxPQ}</span>
+            <span>{minPQ}</span> - <span>{productQuantity}</span>
           </label>
           <input
             id="productQuantity"

@@ -122,7 +122,7 @@ function AllAccountsPage({ searchParams }: { searchParams?: { [key: string]: str
   // activate account
   const handleActivateAccounts = useCallback(async (ids: string[], value: boolean) => {
     try {
-      // senred request to server
+      // send request to server
       const { updatedAccounts, message } = await activateAccountsApi(ids, value)
 
       // update accounts from state
@@ -148,7 +148,7 @@ function AllAccountsPage({ searchParams }: { searchParams?: { [key: string]: str
       setLoadingAccounts(ids)
 
       try {
-        // senred request to server
+        // send request to server
         const { deletedAccounts, message } = await deleteAccountsApi(ids)
 
         // remove deleted tags from state
@@ -174,7 +174,7 @@ function AllAccountsPage({ searchParams }: { searchParams?: { [key: string]: str
     [router]
   )
 
-  // handle opimize filter
+  // handle optimize filter
   const handleOptimizeFilter: SubmitHandler<FieldValues> = useCallback(
     data => {
       // reset page

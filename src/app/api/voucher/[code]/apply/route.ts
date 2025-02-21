@@ -59,7 +59,7 @@ export async function POST(req: NextRequest, { params: { code } }: { params: { c
       return NextResponse.json({ message: 'Voucher của bạn đã hết lượt sử dụng' }, { status: 401 })
     }
 
-    // not enought total to apply
+    // not enough total to apply
     if (total < voucher.minTotal) {
       return NextResponse.json(
         {

@@ -109,7 +109,7 @@ function AllOrdersPage({ searchParams }: { searchParams?: { [key: string]: strin
   // cancel orders
   const handleCancelOrders = useCallback(async (ids: string[]) => {
     try {
-      // senred request to server
+      // send request to server
       const { canceledOrders, message } = await cancelOrdersApi(ids)
 
       // update orders from state
@@ -134,7 +134,7 @@ function AllOrdersPage({ searchParams }: { searchParams?: { [key: string]: strin
     setLoadingOrders(ids)
 
     try {
-      // senred request to server
+      // send request to server
       const { deletedOrders, message } = await deletedOrdersApi(ids)
 
       // remove deleted tags from state
@@ -153,7 +153,7 @@ function AllOrdersPage({ searchParams }: { searchParams?: { [key: string]: strin
     }
   }, [])
 
-  // handle opimize filter
+  // handle optimize filter
   const handleOptimizeFilter: SubmitHandler<FieldValues> = useCallback(
     data => {
       // reset page
@@ -264,7 +264,7 @@ function AllOrdersPage({ searchParams }: { searchParams?: { [key: string]: strin
         <div className="col-span-12 flex flex-col md:col-span-6">
           <label htmlFor="total">
             <span className="font-bold">Total: </span>
-            <span>{formatPrice(total)}</span> - <span>{formatPrice(maxTotal)}</span>
+            <span>{formatPrice(minTotal)}</span> - <span>{formatPrice(total)}</span>
           </label>
           <input
             id="total"

@@ -111,7 +111,7 @@ function AllUsersPage({ searchParams }: { searchParams?: { [key: string]: string
     setLoadingUsers(ids)
 
     try {
-      // senred request to server
+      // send request to server
       const { deletedUsers, message } = await deleteUsersApi(ids)
 
       // remove deleted users from state
@@ -137,7 +137,7 @@ function AllUsersPage({ searchParams }: { searchParams?: { [key: string]: string
     )
   }, [users, selectedUsers.length])
 
-  // handle opimize filter
+  // handle optimize filter
   const handleOptimizeFilter: SubmitHandler<FieldValues> = useCallback(
     data => {
       // reset page
@@ -245,7 +245,7 @@ function AllUsersPage({ searchParams }: { searchParams?: { [key: string]: string
         <div className="col-span-12 flex flex-col md:col-span-4">
           <label htmlFor="balance">
             <span className="font-bold">Balance: </span>
-            <span>{formatPrice(balance)}</span> - <span>{formatPrice(maxBalance)}</span>
+            <span>{formatPrice(minBalance)}</span> - <span>{formatPrice(balance)}</span>
           </label>
           <input
             id="balance"
@@ -264,8 +264,7 @@ function AllUsersPage({ searchParams }: { searchParams?: { [key: string]: string
         <div className="col-span-12 flex flex-col md:col-span-4">
           <label htmlFor="accumulated">
             <span className="font-bold">Accumulated: </span>
-            <span>{formatPrice(accumulated || maxAccumulated)}</span> -{' '}
-            <span>{formatPrice(maxAccumulated)}</span>
+            <span>{formatPrice(minAccumulated)}</span> - <span>{formatPrice(accumulated)}</span>
           </label>
           <input
             id="accumulated"

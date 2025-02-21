@@ -106,7 +106,7 @@ function AllCategoriesPage({ searchParams }: { searchParams?: { [key: string]: s
     setLoadingCategories(ids)
 
     try {
-      // senred request to server
+      // send request to server
       const { deletedCategories, message } = await deleteCategoriesApi(ids)
 
       // remove deleted tags from state
@@ -128,7 +128,7 @@ function AllCategoriesPage({ searchParams }: { searchParams?: { [key: string]: s
     }
   }, [])
 
-  // handle opimize filter
+  // handle optimize filter
   const handleOptimizeFilter: SubmitHandler<FieldValues> = useCallback(
     data => {
       // reset page
@@ -225,7 +225,7 @@ function AllCategoriesPage({ searchParams }: { searchParams?: { [key: string]: s
         <div className="col-span-12 flex flex-col md:col-span-4">
           <label htmlFor="productQuantity">
             <span className="font-bold">Product Quantity: </span>
-            <span>{productQuantity}</span> - <span>{maxPQ}</span>
+            <span>{minPQ}</span> - <span>{productQuantity}</span>
           </label>
           <input
             id="productQuantity"

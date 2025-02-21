@@ -45,7 +45,7 @@ function Meta({
 
   // values
   const minPrice: number = chops?.minPrice || 0
-  const maxPrice: number = chops?.maxPrice || 0
+  const maxPrice: number = Math.min(chops?.maxPrice || 1000000, 1000000)
   const [price, setPrice] = useState<number>(
     searchParams?.price ? +searchParams.price : chops?.maxPrice || 0
   )
@@ -83,7 +83,7 @@ function Meta({
   }, [getValues, searchParams, setValue])
 
   // MARK: Handlers
-  // handle opimize filter
+  // handle optimize filter
   const handleOptimizeFilter: SubmitHandler<FieldValues> = useCallback(
     data => {
       // reset page
@@ -199,7 +199,7 @@ function Meta({
           <div className="col-span-12 flex flex-col md:col-span-4">
             <label htmlFor="price">
               <span className="font-bold">Giá: </span>
-              <span>{formatPrice(price)}</span> - <span>{formatPrice(maxPrice)}</span>
+              <span>{formatPrice(minPrice)}</span> - <span>{formatPrice(price)}</span>
             </label>
             <input
               id="price"
@@ -220,7 +220,7 @@ function Meta({
           <div className="col-span-12 flex flex-col md:col-span-4">
             <label htmlFor="stock">
               <span className="font-bold">Còn lại: </span>
-              <span>{stock}</span> - <span>{maxStock}</span>
+              <span>{minStock}</span> - <span>{stock}</span>
             </label>
             <input
               id="stock"
